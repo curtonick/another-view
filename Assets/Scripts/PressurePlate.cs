@@ -19,18 +19,21 @@ public class PressurePlate : MonoBehaviour
 
     }
 
-    private void OnCollisionStay(Collision collision)
+    private void OnTriggerStay(Collider collider)
     {
         door.SetActive(false);
+        // Debug.LogFormat("OnTriggerStay {0}", plate.name);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collider)
     {
         // Do nothing for now
+        // Debug.LogFormat("OnTriggerEnter ${0}", plate.name);
     }
 
-    private void OnCollisionExit(Collision collision)
+    private void OnTriggerExit(Collider collider)
     {
         door.SetActive(true);
+        // Debug.LogFormat("OnTriggerExit {0}", plate.name);
     }
 }

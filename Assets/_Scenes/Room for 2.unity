@@ -227,7 +227,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1417258215064542, guid: 7451ef01e53127446b9d7406220542f6, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4343527246573924, guid: 7451ef01e53127446b9d7406220542f6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -295,7 +295,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1585349779547952, guid: aa2d47f95b34fbe4d9cbe095f13585b5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4333491988720984, guid: aa2d47f95b34fbe4d9cbe095f13585b5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1202,7 +1202,7 @@ GameObject:
   - component: {fileID: 1062870071}
   - component: {fileID: 1062870070}
   m_Layer: 0
-  m_Name: Button
+  m_Name: First Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1502,7 +1502,7 @@ GameObject:
   - component: {fileID: 1474372524}
   - component: {fileID: 1474372523}
   m_Layer: 0
-  m_Name: Button (3)
+  m_Name: Final Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1610,7 +1610,7 @@ GameObject:
   - component: {fileID: 1478145032}
   - component: {fileID: 1478145031}
   m_Layer: 0
-  m_Name: Button (1)
+  m_Name: Platform Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1971,7 +1971,7 @@ GameObject:
   - component: {fileID: 1743580847}
   - component: {fileID: 1743580846}
   m_Layer: 0
-  m_Name: Button (2)
+  m_Name: Middle Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
