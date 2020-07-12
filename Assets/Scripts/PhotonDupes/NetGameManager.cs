@@ -80,7 +80,9 @@ namespace Aview
                     // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
                     GameObject player = PhotonNetwork.Instantiate(this.playerPrefab.name, new Vector3(0f, 5f, 0f), Quaternion.identity, 0);
                     string childName = IsPlayerOne() ? PLAYER_ONE_CHILD_NAME : PLAYER_TWO_CHILD_NAME;
-                    player.transform.Find(childName).gameObject.SetActive(true);
+                    Transform child = player.transform.Find(childName);
+                    player.GetComponent<PlayerController>().SetChild(child);
+                    child.gameObject.SetActive(true);
                 }
                 else
                 {

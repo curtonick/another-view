@@ -13,18 +13,14 @@ public class PlayerController : MonoBehaviour
     Animator anim;
     Rigidbody rb;
 
-    void Start()
-    {
-        anim = transform.Find("Maae").GetComponent<Animator>();
-        rb = GetComponent<Rigidbody>();
-    }
+    void Start() { }
 
     void Update()
     {
-        ControllPlayer();
+        ControlPlayer();
     }
 
-    void ControllPlayer()
+    void ControlPlayer()
     {
         float moveHorizontal = Input.GetAxisRaw("Horizontal");
         float moveVertical = Input.GetAxisRaw("Vertical");
@@ -39,5 +35,11 @@ public class PlayerController : MonoBehaviour
             canJump = Time.time + timeBeforeNextJump;
             anim.SetTrigger("jump");
         }
+    }
+
+    public void SetChild(Transform child)
+    {
+        anim = child.GetComponent<Animator>();
+        rb = GetComponent<Rigidbody>();
     }
 }
