@@ -3,9 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun.Demo.PunBasics;
+using Photon.Pun;
 
 public class PlayerController : MonoBehaviourPunCallbacks
 {
+    private const string PLAYER_ONE_CHILD_NAME = "Maae";
+    private const string PLAYER_TWO_CHILD_NAME = "Frog";
 
     public static PlayerController LocalPlayerInstance;
     public float movementSpeed = 3;
@@ -56,9 +59,18 @@ public class PlayerController : MonoBehaviourPunCallbacks
         }
     }
 
-    public void SetChild(Transform child)
+    [PunRPC]
+    public void SetChild(bool isPlayerOne)
     {
+        string childName = isPlayerOne ? PLAYER_ONE_CHILD_NAME : PLAYER_TWO_CHILD_NAME;
+        Transform child = transform.Find(childName);
         anim = child.GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
+        child.gameObject.SetActive(true);
+    }
+
+    public void OnlineSetup(bool isPlayerOne)
+    {
+        photonView.RPC("SetChild", RpcTarget.All, isPlayerOne);
     }
 }

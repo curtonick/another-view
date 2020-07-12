@@ -29,10 +29,6 @@ namespace Aview
     {
 
         #region Public Fields
-
-        private const string PLAYER_ONE_CHILD_NAME = "Maae";
-        private const string PLAYER_TWO_CHILD_NAME = "Frog";
-
         static public NetGameManager Instance;
 
         #endregion
@@ -78,11 +74,8 @@ namespace Aview
                     Debug.LogFormat("We are Instantiating LocalPlayer from {0}", SceneManagerHelper.ActiveSceneName);
 
                     // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
-                    GameObject player = PhotonNetwork.Instantiate(this.playerPrefab.name, new Vector3(0f, 5f, 0f), Quaternion.identity, 0);
-                    string childName = IsPlayerOne() ? PLAYER_ONE_CHILD_NAME : PLAYER_TWO_CHILD_NAME;
-                    Transform child = player.transform.Find(childName);
-                    player.GetComponent<PlayerController>().SetChild(child);
-                    child.gameObject.SetActive(true);
+                    GameObject player = PhotonNetwork.Instantiate(this.playerPrefab.name, new Vector3(0f, 2f, 0f), Quaternion.identity, 0);
+                    player.GetComponent<PlayerController>().OnlineSetup(IsPlayerOne());
                 }
                 else
                 {
