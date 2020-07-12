@@ -7,8 +7,6 @@ public class PressurePlate : MonoBehaviour
     public Collider plate;
     public GameObject door;
 
-    private bool isClosed = true;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +21,11 @@ public class PressurePlate : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        door.SetActive(isClosed ? false : true);
-        isClosed = !isClosed;
+        door.SetActive(false);
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        door.SetActive(true);
     }
 }
