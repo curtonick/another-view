@@ -227,7 +227,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1417258215064542, guid: 7451ef01e53127446b9d7406220542f6, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4343527246573924, guid: 7451ef01e53127446b9d7406220542f6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -292,6 +292,10 @@ PrefabInstance:
     - target: {fileID: 1585349779547952, guid: aa2d47f95b34fbe4d9cbe095f13585b5, type: 3}
       propertyPath: m_Name
       value: Cat Spawn
+      objectReference: {fileID: 0}
+    - target: {fileID: 1585349779547952, guid: aa2d47f95b34fbe4d9cbe095f13585b5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4333491988720984, guid: aa2d47f95b34fbe4d9cbe095f13585b5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1767,6 +1771,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: NetGameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 685726039380721304, guid: 618c99b70c4ebb343bd8867cec676430,
+        type: 3}
+      propertyPath: dogSpawn
+      value: 
+      objectReference: {fileID: 52775487}
+    - target: {fileID: 685726039380721304, guid: 618c99b70c4ebb343bd8867cec676430,
+        type: 3}
+      propertyPath: catSpawn
+      value: 
+      objectReference: {fileID: 66839428}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 618c99b70c4ebb343bd8867cec676430, type: 3}
 --- !u!1 &1697682967
