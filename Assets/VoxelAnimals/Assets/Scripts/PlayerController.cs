@@ -71,6 +71,6 @@ public class PlayerController : MonoBehaviourPunCallbacks
 
     public void OnlineSetup(bool isPlayerOne)
     {
-        photonView.RPC("SetChild", RpcTarget.All, isPlayerOne);
+        photonView.RPC("SetChild", RpcTarget.AllBuffered, isPlayerOne);
     }
 }
