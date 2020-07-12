@@ -31,6 +31,10 @@ namespace Aview
         #region Public Fields
         static public NetGameManager Instance;
 
+        public PressurePlate winPlate1;
+        public PressurePlate winPlate2;
+        public GameObject youWinScreen;
+
         #endregion
 
         #region Private Fields
@@ -114,6 +118,12 @@ namespace Aview
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 QuitApplication();
+            }
+
+            if (winPlate1.isActivated && winPlate2.isActivated)
+            {
+                Debug.Log("You win the game!");
+                youWinScreen.SetActive(true);
             }
         }
 

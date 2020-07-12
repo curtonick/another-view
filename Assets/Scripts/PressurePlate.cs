@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class PressurePlate : MonoBehaviour
 {
-    public Collider plate;
     public GameObject door;
+
+    public bool isActivated = false;
 
     // Start is called before the first frame update
     void Start()
@@ -16,24 +17,24 @@ public class PressurePlate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (door != null)
+        {
+            door.SetActive(!isActivated);
+        }
     }
 
     private void OnTriggerStay(Collider collider)
     {
-        door.SetActive(false);
-        // Debug.LogFormat("OnTriggerStay {0}", plate.name);
+        isActivated = true;
     }
 
     private void OnTriggerEnter(Collider collider)
     {
-        // Do nothing for now
-        // Debug.LogFormat("OnTriggerEnter ${0}", plate.name);
+        isActivated = true;
     }
 
     private void OnTriggerExit(Collider collider)
     {
-        door.SetActive(true);
-        // Debug.LogFormat("OnTriggerExit {0}", plate.name);
+        isActivated = false;
     }
 }
