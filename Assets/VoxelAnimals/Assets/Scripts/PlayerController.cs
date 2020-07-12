@@ -82,7 +82,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
         string childName = isPlayerOne ? PLAYER_ONE_CHILD_NAME : PLAYER_TWO_CHILD_NAME;
         Transform child = transform.Find(childName);
         anim = child.GetComponent<Animator>();
-        rb = child.GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
         child.gameObject.SetActive(true);
     }
 
