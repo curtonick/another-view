@@ -132,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1585349779547952, guid: aa2d47f95b34fbe4d9cbe095f13585b5, type: 3}
       propertyPath: m_Name
-      value: Cat
+      value: Frog
       objectReference: {fileID: 0}
     - target: {fileID: 1585349779547952, guid: aa2d47f95b34fbe4d9cbe095f13585b5, type: 3}
       propertyPath: m_IsActive
@@ -261,7 +261,7 @@ PrefabInstance:
     - target: {fileID: 3196091105290999501, guid: cb6b289c9598e456c95a6ec7b4b1d773,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3215275816811266199, guid: cb6b289c9598e456c95a6ec7b4b1d773, type: 3}
