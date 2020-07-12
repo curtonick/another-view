@@ -73,7 +73,7 @@ namespace Aview
             {
 
 
-                if (PlayerManager.LocalPlayerInstance == null)
+                if (PlayerController.LocalPlayerInstance == null)
                 {
                     Debug.LogFormat("We are Instantiating LocalPlayer from {0}", SceneManagerHelper.ActiveSceneName);
 

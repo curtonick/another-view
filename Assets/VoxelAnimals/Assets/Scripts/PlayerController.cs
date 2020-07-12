@@ -1,10 +1,12 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviourPunCallbacks
 {
 
+    public static PlayerController LocalPlayerInstance;
     public float movementSpeed = 3;
     public float rotateSpeed = 70;
     public float jumpForce = 300;
@@ -13,11 +15,26 @@ public class PlayerController : MonoBehaviour
     Animator anim;
     Rigidbody rb;
 
-    void Start() { }
+    void Awake() 
+    {
+        // #Important
+        // used in GameManager.cs: we keep track of the localPlayer instance to prevent instanciation when levels are synchronized
+        if (photonView.IsMine)
+        {
+            LocalPlayerInstance = this;
+        }
+
+        // #Critical
+        // we flag as don't destroy on load so that instance survives level synchronization, thus giving a seamless experience when levels load.
+        DontDestroyOnLoad(gameObject);
+    }
 
     void Update()
     {
-        ControlPlayer();
+        if (photonView.IsMine)
+        {
+            ControlPlayer();
+        }
     }
 
     void ControlPlayer()
