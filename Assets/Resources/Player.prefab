@@ -106,7 +106,7 @@ MonoBehaviour:
   height: 3
   heightSmoothLag: 0.3
   centerOffset: {x: 0, y: 0, z: 0}
-  followOnStart: 1
+  followOnStart: 0
 --- !u!54 &5344002242935233515
 Rigidbody:
   m_ObjectHideFlags: 0

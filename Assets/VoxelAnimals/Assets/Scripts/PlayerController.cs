@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun.Demo.PunBasics;
 
 public class PlayerController : MonoBehaviourPunCallbacks
 {
@@ -15,13 +16,14 @@ public class PlayerController : MonoBehaviourPunCallbacks
     Animator anim;
     Rigidbody rb;
 
-    void Awake() 
+    void Awake()
     {
         // #Important
         // used in GameManager.cs: we keep track of the localPlayer instance to prevent instanciation when levels are synchronized
         if (photonView.IsMine)
         {
             LocalPlayerInstance = this;
+            GetComponent<CameraWork>().OnStartFollowing();
         }
 
         // #Critical
