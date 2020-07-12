@@ -83,6 +83,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
         Transform child = transform.Find(childName);
         anim = child.GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
+        rb.constraints = RigidbodyConstraints.FreezeRotation;
         child.gameObject.SetActive(true);
     }
 
