@@ -40,8 +40,24 @@ public class PlayerController : MonoBehaviourPunCallbacks
         {
             ControlPlayer();
         }
+        DebugListen();
     }
 
+    void DebugListen()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            var cameraWork = GetComponent<CameraWork>();
+            if (cameraWork.IsFollowing)
+            {
+                cameraWork.StopFollowing();
+            }
+            else
+            {
+                cameraWork.OnStartFollowing();
+            }
+        }
+    }
     void ControlPlayer()
     {
         float moveHorizontal = Input.GetAxisRaw("Horizontal");
@@ -58,6 +74,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
             anim.SetTrigger("jump");
         }
     }
+
 
     [PunRPC]
     public void SetChild(bool isPlayerOne)

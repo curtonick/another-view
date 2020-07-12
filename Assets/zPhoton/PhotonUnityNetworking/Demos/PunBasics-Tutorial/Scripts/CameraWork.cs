@@ -51,14 +51,16 @@ namespace Photon.Pun.Demo.PunBasics
 		// Represents the position we are trying to reach using SmoothDamp()
 		private float targetHeight = 100000.0f;
 
-        #endregion
+		public bool IsFollowing { get => isFollowing; }
 
-        #region MonoBehaviour Callbacks
+		#endregion
 
-        /// <summary>
-        /// MonoBehaviour method called on GameObject by Unity during initialization phase
-        /// </summary>
-        void Start()
+		#region MonoBehaviour Callbacks
+
+		/// <summary>
+		/// MonoBehaviour method called on GameObject by Unity during initialization phase
+		/// </summary>
+		void Start()
 		{
 			// Start following the target if wanted.
 			if (followOnStart)
@@ -174,6 +176,11 @@ namespace Photon.Pun.Demo.PunBasics
 
 	    }
 
+
+		public void StopFollowing()
+		{
+			isFollowing = false;
+		}
 		#endregion
 	}
 }
