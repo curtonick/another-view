@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        anim = GetComponent<Animator>();
+        anim = transform.Find("Maae").GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
     }
 
