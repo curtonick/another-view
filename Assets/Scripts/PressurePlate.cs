@@ -17,24 +17,30 @@ public class PressurePlate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+    }
+
+    private void OnTriggerStay(Collider collider)
+    {
+        isActivated = true;
+
         if (door != null)
         {
             door.SetActive(!isActivated);
         }
     }
 
-    private void OnTriggerStay(Collider collider)
-    {
-        isActivated = true;
-    }
-
     private void OnTriggerEnter(Collider collider)
     {
-        isActivated = true;
+        // Do nothing for now
     }
 
     private void OnTriggerExit(Collider collider)
     {
         isActivated = false;
+
+        if (door != null)
+        {
+            door.SetActive(!isActivated);
+        }
     }
 }
