@@ -22,10 +22,12 @@ public class PressurePlate : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         door.SetActive(false);
+        Debug.Log("Opening Door");
     }
 
     private void OnCollisionExit(Collision collision)
     {
         door.SetActive(true);
+        Debug.Log("Closing Door");
     }
 }
